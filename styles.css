@@ -1,17 +1,17 @@
 /* Bay Club modern prototype styles – v2 with card images */
 :root {
-  --bg: #050816;
-  --bg-elevated: #0c1020;
-  --bg-soft: #0f1628;
-  --accent: #2dd6c4;
-  --accent-soft: rgba(2, 214, 196, 0.12);
-  --accent-strong: #41f0df;
-  --text: #f5f7ff;
-  --muted: #a2a9c3;
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --bg: #f8f9fa;
+  --bg-elevated: #ffffff;
+  --bg-soft: #f0f2f5;
+  --accent: #0066cc;
+  --accent-soft: rgba(0, 102, 204, 0.1);
+  --accent-strong: #0052a3;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --border-subtle: rgba(0, 0, 0, 0.1);
   --radius-xl: 24px;
   --radius-lg: 18px;
-  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.5);
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
   --container: min(1120px, 100% - 3rem);
 }
 
@@ -28,8 +28,8 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, #1e2340 0, transparent 55%),
-    radial-gradient(circle at bottom right, #10203a 0, #050816 55%);
+    radial-gradient(circle at top left, #e8eef9 0, transparent 55%),
+    radial-gradient(circle at bottom right, #f0f2f5 0, #f8f9fa 55%);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
@@ -53,9 +53,9 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(18px);
   background: linear-gradient(
       to bottom,
-      rgba(5, 8, 22, 0.96),
-      rgba(5, 8, 22, 0.9),
-      rgba(5, 8, 22, 0.85)
+      rgba(248, 249, 250, 0.96),
+      rgba(248, 249, 250, 0.9),
+      rgba(248, 249, 250, 0.85)
     );
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -79,9 +79,9 @@ a { color: inherit; text-decoration: none; }
   width: 32px;
   height: 32px;
   border-radius: 40%;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: radial-gradient(circle at 30% 20%, #ffffff 0, #4de4d0 20%, #111634 68%);
-  box-shadow: 0 0 22px rgba(77, 228, 208, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: radial-gradient(circle at 30% 20%, #ffffff 0, #0066cc 20%, #e8eef9 68%);
+  box-shadow: 0 0 22px rgba(0, 102, 204, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -92,9 +92,9 @@ a { color: inherit; text-decoration: none; }
   inset: 45% -20% -30%;
   background: conic-gradient(
     from 180deg,
-    rgba(5, 8, 22, 0.9),
-    rgba(5, 8, 22, 0.2),
-    rgba(5, 8, 22, 0.95)
+    rgba(248, 249, 250, 0.9),
+    rgba(248, 249, 250, 0.2),
+    rgba(248, 249, 250, 0.95)
   );
 }
 
@@ -324,7 +324,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: auto 1.1rem 1rem;
   border-radius: 999px;
-  background: rgba(5, 8, 22, 0.86);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--muted);
   font-size: 0.7rem;
   padding: 0.35rem 0.8rem;
@@ -404,8 +404,8 @@ a { color: inherit; text-decoration: none; }
   padding: 1.4rem 1.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.02), transparent 55%),
-    #050817;
+  background: radial-gradient(circle at top left, rgba(0, 102, 204, 0.05), transparent 55%),
+    #ffffff;
   box-shadow: 0 10px 30px rgba(3, 5, 15, 0.9);
 }
 
@@ -505,7 +505,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.75rem;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  background: rgba(5, 8, 22, 0.86);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--muted);
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(10px);
@@ -598,8 +598,8 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius-xl);
   padding: 1.8rem 1.6rem;
   border: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at top left, rgba(77, 228, 208, 0.16), transparent 60%),
-    #050816;
+  background: radial-gradient(circle at top left, rgba(0, 102, 204, 0.08), transparent 60%),
+    #ffffff;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -635,7 +635,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: auto;
   padding: 1.8rem 0 2.4rem;
   border-top: 1px solid var(--border-subtle);
-  background: rgba(5, 8, 22, 0.97);
+  background: rgba(255, 255, 255, 0.97);
 }
 
 .footer-inner {
@@ -679,7 +679,7 @@ a { color: inherit; text-decoration: none; }
   position: sticky;
   top: 64px; /* sits just under the main header */
   z-index: 60;
-  background: rgba(5, 8, 22, 0.94);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
 }
