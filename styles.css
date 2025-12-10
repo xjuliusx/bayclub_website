@@ -1,4 +1,4 @@
-/* Bay Club modern prototype styles */
+/* Bay Club modern prototype styles – v2 with card images */
 :root {
   --bg: #050816;
   --bg-elevated: #0c1020;
@@ -110,7 +110,7 @@ a { color: inherit; text-decoration: none; }
 .brand-sub {
   font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+ letter-spacing: 0.18em;
   color: var(--muted);
 }
 
@@ -409,6 +409,23 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 30px rgba(3, 5, 15, 0.9);
 }
 
+/* Card image header */
+.card__image {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #020308;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .card__kicker {
   font-size: 0.72rem;
   letter-spacing: 0.16em;
@@ -644,3 +661,76 @@ a { color: inherit; text-decoration: none; }
 }
 
 .page-hero .section-kicker { margin-bottom: 0.4rem; }
+
+
+
+/* Events tweaks */
+@media (max-width: 900px) {
+  .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .grid--3 { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+
+/* Sticky section navigation bar under hero */
+.section-nav-bar {
+  position: sticky;
+  top: 64px; /* sits just under the main header */
+  z-index: 60;
+  background: rgba(5, 8, 22, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0.5rem 0.25rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.4rem;
+  font-size: 0.82rem;
+}
+
+.section-nav-inner a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  font-size: 0.7rem;
+  position: relative;
+  padding-bottom: 0.15rem;
+}
+
+.section-nav-inner a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.25rem;
+  height: 2px;
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  transition: transform 140ms ease-out;
+}
+
+.section-nav-inner a:hover {
+  color: var(--text);
+}
+
+.section-nav-inner a:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 720px) {
+  .section-nav-inner {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    padding: 0.55rem 0.4rem;
+  }
+}
