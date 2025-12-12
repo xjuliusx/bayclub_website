@@ -444,6 +444,40 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
 }
 
+.listing-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.listing-cta {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.listing-cta img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.listing-cta__label {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: rgba(2, 3, 8, 0.75);
+  color: #fff;
+  padding: 0.45rem 0.65rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
 .card__image--split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
