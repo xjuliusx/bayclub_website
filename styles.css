@@ -13,6 +13,7 @@
   --radius-lg: 18px;
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
   --container: min(1120px, 100% - 3rem);
+  --container-wide: min(1280px, 100% - 3rem);
 }
 
 *,
@@ -193,15 +194,23 @@ a { color: inherit; text-decoration: none; }
 
 /* Hero */
 
-.hero { padding: 3.5rem 0 3rem; }
+.hero {
+  padding: 4.6rem 0 3.8rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
 
 .hero-inner {
-  max-width: var(--container);
-  margin: 0 auto;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 2.75rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 0;
+  align-items: stretch;
+  min-height: calc(100vh - 120px);
 }
 
 .hero-eyebrow {
@@ -335,6 +344,10 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(circle at top, rgba(45, 214, 196, 0.16), transparent 50%),
     linear-gradient(145deg, #030515, #080b1b);
   isolation: isolate;
+  min-height: clamp(520px, 70vh, 860px);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
 }
 
 .hero-media::after {
@@ -353,9 +366,56 @@ a { color: inherit; text-decoration: none; }
 .hero-media__img {
   width: 100%;
   height: 100%;
-  max-height: 420px;
+  max-height: none;
   object-fit: cover;
   display: block;
+}
+
+.hero-inner > div:first-child {
+  max-width: 620px;
+  padding: 0 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.scroll-cue:hover {
+  transform: translate(-50%, -3px);
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.scroll-cue:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .hero { padding: 3.4rem 0 3rem; }
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0;
+  }
+  .hero-inner > div:first-child { padding: 0 1.5rem; max-width: none; }
 }
 
 /* Highlight strip */
