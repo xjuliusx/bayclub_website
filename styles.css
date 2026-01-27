@@ -187,9 +187,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .section-subtitle {
-  max-width: 440px;
+  max-width: none;
+  width: 100%;
   font-size: 0.92rem;
   color: var(--muted);
+  flex: 0 0 100%;
+  align-self: flex-start;
+  margin-top: 0.4rem;
 }
 
 /* Hero */
@@ -738,7 +742,8 @@ a { color: inherit; text-decoration: none; }
 /* Page-specific utility */
 
 .page-intro {
-  max-width: 540px;
+  max-width: none;
+  width: 100%;
   font-size: 0.92rem;
   color: var(--muted);
   margin-top: 0.6rem;
