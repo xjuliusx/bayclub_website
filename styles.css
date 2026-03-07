@@ -618,6 +618,59 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0.8rem;
 }
 
+.floorplan-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+}
+
+.floorplan-btn {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  min-height: 74px;
+  border-radius: 14px;
+  border: 1px solid rgba(56, 134, 200, 0.34);
+  background: linear-gradient(145deg, rgba(17, 48, 77, 0.96), rgba(35, 87, 136, 0.93));
+  color: #f5fbff;
+  box-shadow: 0 14px 28px rgba(8, 22, 39, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.7rem 0.9rem;
+}
+
+.floorplan-btn:hover {
+  background: linear-gradient(145deg, rgba(22, 60, 94, 0.97), rgba(45, 106, 162, 0.95));
+  border-color: rgba(108, 176, 236, 0.65);
+  box-shadow: 0 18px 34px rgba(10, 28, 49, 0.32);
+}
+
+.floorplan-btn::after {
+  content: "PDF";
+  margin-left: 0;
+  transform: none;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+}
+
+.floorplan-btn:hover::after {
+  transform: none;
+}
+
+.floorplan-btn__title {
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.floorplan-btn__sub {
+  font-size: 0.75rem;
+  color: rgba(238, 247, 255, 0.82);
+}
+
 .listing-cta {
   position: relative;
   display: block;
@@ -748,6 +801,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 900px) {
   .gallery-grid { grid-template-columns: minmax(0, 1fr); }
+  .floorplan-buttons { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* EV badge */
