@@ -906,6 +906,24 @@ a { color: inherit; text-decoration: none; }
   margin-right: 0.5rem;
 }
 
+.transit-link {
+  display: inline-block;
+  margin: 0 0.15rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 134, 200, 0.35);
+  background: rgba(74, 160, 220, 0.16);
+  color: #0b4f86;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.transit-link:hover {
+  background: rgba(74, 160, 220, 0.25);
+  border-color: rgba(56, 134, 200, 0.55);
+}
+
 /* Page-specific utility */
 
 .page-intro {
