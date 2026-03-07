@@ -15,6 +15,7 @@
       <a href="neighborhood.html" data-nav-key="neighborhood">Neighborhood</a>
       <a href="events.html" data-nav-key="events">Events</a>
       <a href="residents_area.html" data-nav-key="residents_area">Residents Area</a>
+      <a href="contacts.html" data-nav-key="contacts">Contacts</a>
     </nav>
   </div>
 </header>`;
@@ -30,6 +31,7 @@
     if (page === 'neighborhood.html') return 'neighborhood';
     if (page === 'events.html' || page === 'community.html') return 'events';
     if (page === 'residents_area.html') return 'residents_area';
+    if (page === 'contacts.html') return 'contacts';
     if (hash === '#overview') return 'overview';
 
     return '';
