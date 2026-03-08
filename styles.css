@@ -1058,6 +1058,10 @@ a { color: inherit; text-decoration: none; }
   max-width: 62rem;
 }
 
+.amenities-page .section.section--tight.no-gap {
+  padding-top: 0.8rem;
+}
+
 
 
 
