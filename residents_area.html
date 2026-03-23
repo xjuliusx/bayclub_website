@@ -146,19 +146,14 @@
                 <div class="section-kicker">Residents Area · Leisure Club</div>
                 <h2 class="section-title">Leisure Club Reservations</h2>
               </div>
-              <p class="section-subtitle">
-                Use reservations for classes, room bookings, court time, and
-                related Leisure Club scheduling.
-              </p>
             </div>
 
             <p class="page-intro">
-              Mind &amp; Body is used to manage resident reservations for
-              wellness classes, amenity spaces, and courts.
+              Book classes, amenity spaces, and court time — all in one place.
             </p>
 
             <div class="grid grid--2 resident-links">
-              <a class="resident-card" href="#" aria-label="Mind and Body Reservations">
+              <a id="mindbody-link" class="resident-card" href="https://l.ead.me/bfqDA1" aria-label="Mind and Body Reservations" target="_blank" rel="noopener noreferrer">
                 <div class="resident-card-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1z" />
@@ -173,6 +168,12 @@
                 </div>
               </a>
             </div>
+
+            <div class="page-intro" style="margin-top: 0.8rem;">
+              Need help setting up Mind &amp; Body? See the quick-start
+              <a class="reservation-link" href="mindbody/BayClubApp__OneSheeter.pdf" target="_blank" rel="noopener noreferrer">Setup Guide (PDF)</a>.
+              On mobile, the reservations link opens the App Store.
+            </div>
           </div>
         </section>
 
@@ -183,10 +184,11 @@
                 <div class="section-kicker">Residents Area · Newsletter</div>
                 <h2 class="section-title">Community Newsletter</h2>
               </div>
-              <p class="section-subtitle">
-                Read the latest building updates and request newsletter delivery support.
-              </p>
             </div>
+
+            <p class="page-intro">
+              Read the latest building updates and request newsletter delivery support.
+            </p>
 
             <div class="grid grid--2 resident-links">
               <a class="resident-card" href="newsletters/BAY_CLUB_NEWSLETTER_MARCH_2026.pdf" aria-label="View Latest Newsletter (March 2026)" target="_blank" rel="noopener noreferrer">
@@ -227,5 +229,21 @@
         </div>
       </footer>
     </div>
+    <script>
+      // Adjust link behavior so mobile users open the App Store directly
+      document.addEventListener('DOMContentLoaded', function () {
+        var link = document.getElementById('mindbody-link');
+        if (!link) return;
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var isMobile = /android|iphone|ipad|ipod/i.test(ua);
+        if (isMobile) {
+          link.setAttribute('target', '_self');
+          link.removeAttribute('rel');
+        } else {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    </script>
   </body>
 </html>
