@@ -5,32 +5,17 @@
     <title>Residents Area | The Bay Club</title>
     <meta name="description" content="Residents resources and private area for Bay Club homeowners." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://bayclubcondo.com/residents_area.html" />
     <link rel="stylesheet" href="styles.css" />
     <script data-goatcounter="https://xjuliusx.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     <script defer src="scripts/goatcounter-clicks.js"></script>
+      <script defer src="scripts/include-header.js"></script>
   </head>
   <body>
     <div class="page">
-      <header class="site-header">
-        <div class="nav-inner">
-          <a href="index.html" class="brand">
-            <div class="brand-mark"></div>
-            <div class="brand-text">
-              <span class="brand-main">The Bay Club</span>
-              <span class="brand-sub">Bayside · New York</span>
-            </div>
-          </a>
-          <nav class="nav-main">
-            <a href="index.html#overview">Life at The Bay Club</a>
-            <a href="residences.html">Residences</a>
-            <a href="amenities.html">Leisure Club</a>
-            <a href="neighborhood.html">Neighborhood</a>
-            <a href="events.html">Events</a>
-            <a href="residents_area.html" class="is-active">Residents Area</a>
-          </nav>
-        </div>
-      </header>
+      <div data-include="site-header"></div>
 
       <main>
         <section class="page-hero">
@@ -154,6 +139,44 @@
           </div>
         </section>
 
+        <section class="section section--tight" id="leisure-club-reservations">
+          <div class="section-inner">
+            <div class="section-header">
+              <div>
+                <div class="section-kicker">Residents Area · Leisure Club</div>
+                <h2 class="section-title">Leisure Club Reservations</h2>
+              </div>
+            </div>
+
+            <p class="page-intro">
+              Book classes, amenity spaces, and court time — all in one place.
+            </p>
+
+            <div class="grid grid--2 resident-links">
+              <a id="mindbody-link" class="resident-card" href="https://l.ead.me/bfqDA1" aria-label="Mind and Body Reservations" target="_blank" rel="noopener noreferrer">
+                <div class="resident-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1z" />
+                    <path d="M8 8h8" />
+                    <path d="M8 12h8" />
+                    <path d="M8 16h5" />
+                  </svg>
+                </div>
+                <div class="resident-card-text">
+                  <h3>Mind &amp; Body Reservations</h3>
+                  <p>Reservation portal for classes, rooms, and court bookings.</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="page-intro" style="margin-top: 0.8rem;">
+              Need help setting up Mind &amp; Body? See the quick-start
+              <a class="reservation-link" href="mindbody/BayClubApp__OneSheeter.pdf" target="_blank" rel="noopener noreferrer">Setup Guide (PDF)</a>.
+              On mobile, the reservations link opens the App Store.
+            </div>
+          </div>
+        </section>
+
         <section class="section section--tight" id="newsletter">
           <div class="section-inner">
             <div class="section-header">
@@ -161,10 +184,11 @@
                 <div class="section-kicker">Residents Area · Newsletter</div>
                 <h2 class="section-title">Community Newsletter</h2>
               </div>
-              <p class="section-subtitle">
-                Read the latest building updates and request newsletter delivery support.
-              </p>
             </div>
+
+            <p class="page-intro">
+              Read the latest building updates and request newsletter delivery support.
+            </p>
 
             <div class="grid grid--2 resident-links">
               <a class="resident-card" href="newsletters/BAY_CLUB_NEWSLETTER_MARCH_2026.pdf" aria-label="View Latest Newsletter (March 2026)" target="_blank" rel="noopener noreferrer">
@@ -182,7 +206,7 @@
                 </div>
               </a>
 
-              <a class="resident-card" href="mailto:Michael.Brennan@ellimanpm.com,Peter.DeDivani@ellimanpm.com?subject=Newsletter%20Content%20Suggestion" aria-label="Newsletter Content Suggestions by Email">
+              <a class="resident-card" href="mailto:melissabk@nyc.rr.com?subject=Newsletter%20Content%20Suggestion" aria-label="Newsletter Content Suggestions by Email">
                 <div class="resident-card-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2z" />
@@ -200,10 +224,26 @@
       </main>
 
       <footer class="site-footer">
-        <div class="section-inner">
-          <p class="muted">&copy; The Bay Club — Bayside, NY</p>
+        <div class="footer-inner">
+          <span>© The Bay Club — Bayside, NY</span>
         </div>
       </footer>
     </div>
+    <script>
+      // Adjust link behavior so mobile users open the App Store directly
+      document.addEventListener('DOMContentLoaded', function () {
+        var link = document.getElementById('mindbody-link');
+        if (!link) return;
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var isMobile = /android|iphone|ipad|ipod/i.test(ua);
+        if (isMobile) {
+          link.setAttribute('target', '_self');
+          link.removeAttribute('rel');
+        } else {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    </script>
   </body>
 </html>
