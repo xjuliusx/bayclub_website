@@ -650,6 +650,16 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
 }
 
+/* Focus the top of an image within card viewport */
+.card__image--focus-top img {
+  /* Slightly higher crop so headline sits in view */
+  object-position: center 15%;
+}
+
+.card__image--tall {
+  height: 220px;
+}
+
 .listing-cta-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
