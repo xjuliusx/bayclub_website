@@ -8,6 +8,9 @@
         <span class="brand-sub">Bayside · New York</span>
       </div>
     </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <nav class="nav-main">
       <a href="index.html#overview" data-nav-key="overview">Life at The Bay Club</a>
       <a href="residences.html" data-nav-key="residences">Residences</a>
@@ -52,12 +55,46 @@
     }
 
     const key = activeNavKey(window.location.pathname, window.location.hash);
-    if (!key) return;
-
-    const activeLink = document.querySelector(`.nav-main a[data-nav-key="${key}"]`);
-    if (activeLink) {
-      activeLink.classList.add('is-active');
+    if (key) {
+      const activeLink = document.querySelector(`.nav-main a[data-nav-key="${key}"]`);
+      if (activeLink) activeLink.classList.add('is-active');
     }
+
+    initMobileNav();
+  }
+
+  function initMobileNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav-main');
+    if (!toggle || !nav) return;
+
+    function openMenu() {
+      nav.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+    }
+
+    function closeMenu() {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    }
+
+    toggle.addEventListener('click', () => {
+      nav.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.site-header')) closeMenu();
+    });
   }
 
   injectHeader();
