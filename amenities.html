@@ -10,7 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://bayclubcondo.com/amenities.html" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260421a" />
+    <!-- Inline fallback to ensure triptych renders if cached CSS is stale on prod -->
+    <style>
+      .card__image--triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+      .card__image--duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    </style>
     <script data-goatcounter="https://xjuliusx.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
   <script defer src="scripts/goatcounter-clicks.js"></script>
