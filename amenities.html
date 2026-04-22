@@ -7,7 +7,7 @@
       name="description"
       content="Overview of The Bay Club Leisure Club, indoor pool with retractable roof, fitness center, courts, spa features, on-site retail, and social programming."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://bayclubcondo.com/amenities.html" />
     <link rel="stylesheet" href="styles.css?v=20260421a" />
@@ -15,6 +15,7 @@
     <style>
       .card__image--triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
       .card__image--duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+      #social-life-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; }
     </style>
     <script data-goatcounter="https://xjuliusx.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
@@ -179,25 +180,26 @@
           <div class="section-inner">
             <div class="grid grid--2">
               <article class="card">
-                <div class="card__image card__image--tall">
-                  <img src="images/optimized/kids-duo.jpg" alt="Playground and splash pad at The Bay Club" />
+                <div id="social-life-collage" class="card__image card__image--tall" style="height:260px;border-radius:14px;overflow:hidden;">
+                  <img src="images/optimized/community-room-cropped.jpg" alt="Community room" style="width:100%;object-fit:cover;" loading="lazy" />
+                  <img src="images/optimized/movie-cropped.jpg" alt="Movie lounge" style="width:100%;object-fit:cover;" loading="lazy" />
+                  <img src="images/optimized/library-cropped.jpg" alt="Library" style="width:100%;object-fit:cover;" loading="lazy" />
+                  <img src="images/optimized/library2-cropped.jpg" alt="Library reading area" style="width:100%;object-fit:cover;" loading="lazy" />
                 </div>
-                <h2 class="card__title">Social life &amp; kids programming</h2>
+                <h2 class="card__title">Social life &amp; events</h2>
                 <p class="card__body">
                   Beyond fitness, the Leisure Club supports a calendar of
-                  entertainment and family activities, including comedy nights,
-                  live music, and resident events across the club.
+                  entertainment and resident events across the club.
                 </p>
                 <ul class="feature-list">
                   <li>On-site restaurant and bar with event catering</li>
                   <li>Live entertainment and themed event nights</li>
-                  <li>Kids Club, children’s playroom, outdoor playground and splashpad</li>
                   <li>Movie lounge, card room, billiards and library</li>
                 </ul>
               </article>
 
               <article class="card">
-                <div class="card__image">
+                <div class="card__image" style="height:260px;">
                   <img
                     src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
                     alt="Residents dancing together at a social event"
@@ -213,6 +215,7 @@
                   <li>Tai chi, stretch and chair yoga</li>
                   <li>Aqua aerobics and lap swim hours</li>
                   <li>Bridge, mahjong and book clubs</li>
+                  <li>Kids Club, children’s playroom, outdoor playground and splashpad</li>
                   <li>Weekday socials and events</li>
                 </ul>
               </article>
