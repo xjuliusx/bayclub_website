@@ -7,10 +7,16 @@
       name="description"
       content="The Bay Club is a gated condominium community in Bayside, NY featuring a 25,000 sq ft Leisure Club, indoor pool with retractable roof, tennis and basketball courts, on-site retail and EV-ready parking."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://bayclubcondo.com/" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260422b" />
+    <style>
+      /* Fallback to ensure layouts render if external CSS is cached */
+      .card__image--stacked-3 { display: grid; grid-template-rows: repeat(3, 1fr); gap: 4px; }
+      .card__image--triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+      .card__image--mosaic-8 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, 1fr); gap: 4px; }
+    </style>
     <script data-goatcounter="https://xjuliusx.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
   <script defer src="scripts/goatcounter-clicks.js"></script>
@@ -233,11 +239,15 @@
 
             <div class="grid grid--3">
               <article class="card">
-                <div class="card__image">
-                  <img
-                    src="https://images1.apartments.com/i2/7PHu8nbjBg1wWvWxRPvX8EO5k1jGoMywW37_jTU5mtg/111/the-bay-club-bayside-ny-1-bay-club-drive.jpg?p=1"
-                    alt="Outdoor areas and pond at The Bay Club"
-                  />
+                <div class="card__image card__image--mosaic-8">
+                  <img src="images/Pool%201.jpeg" alt="Indoor pool" />
+                  <img src="images/basketballcourts.jpeg" alt="Basketball courts" />
+                  <img src="images/Gym%201.jpeg" alt="Gym equipment" />
+                  <img src="images/tennis1.jpg" alt="Tennis courts" />
+                  <img src="images/Golf%20Sim%201.jpeg" alt="Golf simulator" />
+                  <img src="images/Club%201.jpeg" alt="Studios classes" />
+                  <img src="images/sauna.jpg" alt="Sauna room" />
+                  <img src="images/locker-room-showers.jpg" alt="Locker room showers" />
                 </div>
                 <div class="card__kicker">Wellness &amp; activity</div>
                 <h3 class="card__title">Always something to do</h3>
@@ -271,17 +281,17 @@
               </article>
 
               <article class="card">
-                <div class="card__image">
-                  <img
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80"
-                    alt="Residents enjoying coffee and conversation"
-                  />
+                <div class="card__image card__image--triptych">
+                  <img src="images/optimized/community-room-cropped.jpg" alt="Community room set up for social clubs and events" />
+                  <img src="images/library.PNG" alt="Library room with seating and bookshelves" />
+                  <img src="images/movie.PNG" alt="Movie lounge screening area" />
                 </div>
                 <div class="card__kicker">Community life</div>
                 <h3 class="card__title">Social clubs and events</h3>
                 <p class="card__body">
                   Residents can join social hours, bridge and mahjong meetups,
-                  book clubs, and group fitness classes throughout the week.
+                  book clubs, group fitness classes, and casual movie nights in
+                  the lounge throughout the week.
                 </p>
                 <div class="card__meta">
                   <span class="meta-pill">Weekday daytime programming</span>
@@ -347,12 +357,7 @@
               </article>
 
               <article class="card">
-                <div class="card__image">
-                  <img
-                    src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80"
-                    alt="Kids running through splashpad fountains on a sunny day"
-                  />
-                </div>
+                <div class="card__image card__image--tall" style="height:180px;border-radius:14px;overflow:hidden;background:#020308;background-image:url('images/playground.jpeg'),url('images/Splash%20Pad%20(2).jpeg');background-size:50% 100%,50% 100%;background-position:left top,right top;background-repeat:no-repeat;"></div>
                 <div class="card__kicker">Outdoors</div>
                 <h3 class="card__title">Playground &amp; splashpad</h3>
                 <p class="card__body">
