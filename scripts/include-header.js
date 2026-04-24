@@ -17,7 +17,7 @@
       <a href="/amenities/" data-nav-key="amenities">Leisure Club</a>
       <a href="/neighborhood/" data-nav-key="neighborhood">Neighborhood</a>
       <a href="/events/" data-nav-key="events">Events</a>
-      <a href="/residents_area.html" data-nav-key="residents_area">Residents Area</a>
+      <a href="/residents-area/" data-nav-key="residents_area">Residents Area</a>
       <a href="/contact/" data-nav-key="contacts">Contacts</a>
     </nav>
   </div>
@@ -31,7 +31,7 @@
     if (pathname.startsWith('/amenities')) return 'amenities';
     if (pathname.startsWith('/neighborhood')) return 'neighborhood';
     if (pathname.startsWith('/events') || pathname.startsWith('/community')) return 'events';
-    if (pathname.startsWith('/residents_area')) return 'residents_area';
+    if (pathname.startsWith('/residents-area') || pathname.startsWith('/residents_area')) return 'residents_area';
     if (pathname.startsWith('/contact') || pathname.startsWith('/contacts')) return 'contacts';
 
     return '';
