@@ -1,7 +1,7 @@
 (function () {
   const headerMarkup = `<header class="site-header">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
+    <a href="/" class="brand">
       <div class="brand-mark"></div>
       <div class="brand-text">
         <span class="brand-main">The Bay Club</span>
@@ -12,30 +12,27 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-main">
-      <a href="index.html#overview" data-nav-key="overview">Life at The Bay Club</a>
-      <a href="residences.html" data-nav-key="residences">Residences</a>
-      <a href="amenities.html" data-nav-key="amenities">Leisure Club</a>
-      <a href="neighborhood.html" data-nav-key="neighborhood">Neighborhood</a>
-      <a href="events.html" data-nav-key="events">Events</a>
-      <a href="residents_area.html" data-nav-key="residents_area">Residents Area</a>
-      <a href="contacts.html" data-nav-key="contacts">Contacts</a>
+      <a href="/#overview" data-nav-key="overview">Life at The Bay Club</a>
+      <a href="/residences/" data-nav-key="residences">Residences</a>
+      <a href="/amenities/" data-nav-key="amenities">Leisure Club</a>
+      <a href="/neighborhood/" data-nav-key="neighborhood">Neighborhood</a>
+      <a href="/events/" data-nav-key="events">Events</a>
+      <a href="/residents_area.html" data-nav-key="residents_area">Residents Area</a>
+      <a href="/contact/" data-nav-key="contacts">Contacts</a>
     </nav>
   </div>
 </header>`;
 
   function activeNavKey(pathname, hash) {
-    const page = pathname.split('/').pop() || 'index.html';
-
-    if (page === 'index.html' || page === 'index_temp.html' || page === 'index_construction.html' || page === 'indexconstruction2.html') {
-      return 'overview';
+    if (pathname === '/' || pathname === '/index.html') {
+      return hash === '#overview' ? 'overview' : 'overview';
     }
-    if (page === 'residences.html') return 'residences';
-    if (page === 'amenities.html') return 'amenities';
-    if (page === 'neighborhood.html') return 'neighborhood';
-    if (page === 'events.html' || page === 'community.html') return 'events';
-    if (page === 'residents_area.html') return 'residents_area';
-    if (page === 'contacts.html') return 'contacts';
-    if (hash === '#overview') return 'overview';
+    if (pathname.startsWith('/residences')) return 'residences';
+    if (pathname.startsWith('/amenities')) return 'amenities';
+    if (pathname.startsWith('/neighborhood')) return 'neighborhood';
+    if (pathname.startsWith('/events') || pathname.startsWith('/community')) return 'events';
+    if (pathname.startsWith('/residents_area')) return 'residents_area';
+    if (pathname.startsWith('/contact') || pathname.startsWith('/contacts')) return 'contacts';
 
     return '';
   }
@@ -45,7 +42,7 @@
     if (!mount) return;
 
     try {
-      const res = await fetch('partials/header.html', { cache: 'no-cache' });
+      const res = await fetch('/partials/header.html', { cache: 'no-cache' });
       if (!res.ok) throw new Error('Header partial request failed');
 
       mount.outerHTML = await res.text();
