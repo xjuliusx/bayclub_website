@@ -2,11 +2,7 @@
   const headerMarkup = `<header class="site-header">
   <div class="nav-inner">
     <a href="/" class="brand">
-      <div class="brand-mark"></div>
-      <div class="brand-text">
-        <span class="brand-main">The Bay Club</span>
-        <span class="brand-sub">Bayside · New York</span>
-      </div>
+      <img src="/images/bay_club_logo.svg" alt="The Bay Club Bayside New York" class="brand-logo" />
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
