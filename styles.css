@@ -83,46 +83,21 @@ a { color: inherit; text-decoration: none; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  margin-left: -2rem;
 }
 
-.brand-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 40%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: radial-gradient(circle at 30% 20%, #ffffff 0, #0066cc 20%, #e8eef9 68%);
-  box-shadow: 0 0 22px rgba(0, 102, 204, 0.3);
-  position: relative;
-  overflow: hidden;
+.brand-logo {
+  width: 180px;
+  height: auto;
+  display: block;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 5px 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
 }
 
-.brand-mark::after {
-  content: "";
-  position: absolute;
-  inset: 45% -20% -30%;
-  background: conic-gradient(
-    from 180deg,
-    rgba(248, 249, 250, 0.9),
-    rgba(248, 249, 250, 0.2),
-    rgba(248, 249, 250, 0.95)
-  );
-}
-
-.brand-text { display: flex; flex-direction: column; gap: 0.1rem; }
-
-.brand-main {
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  font-size: 0.86rem;
-}
-
-.brand-sub {
-  font-size: 0.68rem;
-  text-transform: uppercase;
- letter-spacing: 0.18em;
-  color: var(--muted);
+@media (max-width: 640px) {
+  .brand-logo { width: 130px; padding: 4px 10px; }
 }
 
 .nav-main {
