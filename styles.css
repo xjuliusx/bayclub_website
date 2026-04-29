@@ -1036,6 +1036,12 @@ a { color: inherit; text-decoration: none; }
   margin-right: 0.5rem;
 }
 
+.feature-list a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .transit-link {
   display: inline-block;
   margin: 0 0.15rem;
