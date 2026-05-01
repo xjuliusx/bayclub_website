@@ -673,6 +673,9 @@ a { color: inherit; text-decoration: none; }
   .grid--3, .grid--2 { grid-template-columns: minmax(0, 1fr); }
   .card__image--triptych { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .listing-cta-grid { grid-template-columns: minmax(0, 1fr); }
+  #upcoming-events .card__image--tall { height: 220px; }
+  #upcoming-events .card { padding: 1.1rem 1rem; }
+  #events .section-inner .grid { gap: 1.2rem; }
 }
 
 .card {
@@ -1095,6 +1098,14 @@ a { color: inherit; text-decoration: none; }
 
 .page-hero .page-intro {
   margin-top: 0.85rem;
+}
+
+#upcoming-events .page-intro {
+  margin-bottom: 2.5rem;
+}
+
+#upcoming-events > .section-inner > .card {
+  margin-bottom: 2.5rem;
 }
 
 /* Contact / CTA */
