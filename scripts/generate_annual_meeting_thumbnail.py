@@ -1,10 +1,10 @@
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-OUTPUT_PATH = Path(__file__).resolve().parent.parent / "images" / "events" / "annual_meeting_flyer.png"
+OUTPUT_PATH = Path(__file__).resolve().parent.parent / "images" / "events" / "annual_meeting_flyer_v2.png"
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 800, 320
 BACKGROUND = (247, 248, 251)
 HEADER_COLOR = (14, 74, 135)
 ACCENT_COLOR = (224, 71, 52)
@@ -33,21 +33,21 @@ img = Image.new("RGB", (WIDTH, HEIGHT), BACKGROUND)
 draw = ImageDraw.Draw(img)
 
 # Header bar
-bar_height = 200
+bar_height = 100
 draw.rectangle([(0, 0), (WIDTH, bar_height)], fill=HEADER_COLOR)
-draw.text((20, 40), "Bay Club Annual Meeting", font=TITLE_FONT, fill="white")
+draw.text((20, 30), "Bay Club Annual Meeting", font=TITLE_FONT, fill="white")
 
 # Card
-card_top = 250
-card_margin = 50
+card_top = 110
+card_margin = 30
 card_right = WIDTH - card_margin
 card_left = card_margin
-card_height = 300
+card_height = 200
 draw.rounded_rectangle([(card_left, card_top), (card_right, card_top + card_height)], radius=20, fill=CARD_BG)
 
 # Text
 body_text = "Join us in person or online — your ballot matters."
-current_y = card_top + 40
+current_y = card_top + 30
 text_box_width = card_right - card_left - 60
 lines = []
 for word in body_text.split():
@@ -60,7 +60,7 @@ for word in body_text.split():
         lines[-1] = test_line
 for line in lines:
     draw.text((card_left + 30, current_y), line, font=HEADING_FONT, fill=TEXT_COLOR)
-    current_y += 55
+    current_y += 47
 
 # Save PNG
 img.save(OUTPUT_PATH)
