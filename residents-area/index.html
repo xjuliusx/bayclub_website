@@ -183,7 +183,7 @@
             </p>
 
             <div class="grid grid--2 resident-links">
-              <a id="mindbody-link" class="resident-card" href="https://l.ead.me/bfqDA1" aria-label="Mind and Body Reservations" target="_blank" rel="noopener noreferrer">
+              <a id="mindbody-link" class="resident-card" href="#" onclick="openBayClubApp(); return false;" aria-label="Mind and Body Reservations">
                 <div class="resident-card-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1z" />
@@ -202,7 +202,7 @@
             <div class="page-intro" style="margin-top: 0.8rem;">
               Need help setting up Mind &amp; Body? See the quick-start
               <a class="reservation-link" href="/mindbody/BayClubApp__OneSheeter.pdf" target="_blank" rel="noopener noreferrer">Setup Guide (PDF)</a>.
-              On mobile, the reservations link opens the App Store.
+              On mobile, the reservations link opens the Bay Club app (or App Store if not installed).
             </div>
           </div>
         </section>
@@ -262,19 +262,28 @@
       </footer>
     </div>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var link = document.getElementById('mindbody-link');
-        if (!link) return;
-        var ua = navigator.userAgent || navigator.vendor || window.opera;
-        var isMobile = /android|iphone|ipad|ipod/i.test(ua);
-        if (isMobile) {
-          link.setAttribute('target', '_self');
-          link.removeAttribute('rel');
+      function openBayClubApp() {
+        var ua = navigator.userAgent;
+        var isIOS = /iphone|ipad|ipod/i.test(ua);
+        var isAndroid = /android/i.test(ua);
+
+        if (isIOS) {
+          // Try to open the app
+          window.location = "com.fitnessmobileapps.bmapp5748843://";
+          // Fallback: send to smart link if app not installed
+          setTimeout(function () {
+            window.location = "https://l.ead.me/bfqDA1";
+          }, 1500);
+
+        } else if (isAndroid) {
+          // Try deep link first, fallback to smart link
+          window.location = "intent://open#Intent;scheme=com.fitnessmobileapps.bmapp5748843;package=com.fitnessmobileapps.thebayclub43285;S.browser_fallback_url=https%3A%2F%2Fl.ead.me%2FbfqDA1;end";
+
         } else {
-          link.setAttribute('target', '_blank');
-          link.setAttribute('rel', 'noopener noreferrer');
+          // Desktop: link to smart link
+          window.location = "https://l.ead.me/bfqDA1";
         }
-      });
+      }
     </script>
   </body>
 </html>
