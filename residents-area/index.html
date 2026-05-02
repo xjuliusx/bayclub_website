@@ -268,10 +268,14 @@
         var isAndroid = /android/i.test(ua);
 
         if (isIOS) {
-          // Try to open the app
-          window.location = "com.fitnessmobileapps.bmapp5748843://";
+          // Try to open the app using iframe to avoid error dialog
+          var iframe = document.createElement('iframe');
+          iframe.style.display = 'none';
+          iframe.src = 'com.fitnessmobileapps.bmapp5748843://';
+          document.body.appendChild(iframe);
           // Fallback: send to App Store if app not installed
           setTimeout(function () {
+            document.body.removeChild(iframe);
             window.location = "https://apps.apple.com/app/id6754725392";
           }, 1500);
 
