@@ -202,7 +202,7 @@
             <div class="page-intro" style="margin-top: 0.8rem;">
               Need help setting up Mind &amp; Body? See the quick-start
               <a class="reservation-link" href="/mindbody/BayClubApp__OneSheeter.pdf" target="_blank" rel="noopener noreferrer">Setup Guide (PDF)</a>.
-              On mobile, the reservations link opens the Bay Club app (or App Store if not installed).
+              On mobile, the reservations link opens the Bay Club app (or App Store/Play Store if not installed).
             </div>
           </div>
         </section>
@@ -270,17 +270,17 @@
         if (isIOS) {
           // Try to open the app
           window.location = "com.fitnessmobileapps.bmapp5748843://";
-          // Fallback: send to smart link if app not installed
+          // Fallback: send to App Store if app not installed
           setTimeout(function () {
-            window.location = "https://l.ead.me/bfqDA1";
+            window.location = "https://apps.apple.com/app/id6754725392";
           }, 1500);
 
         } else if (isAndroid) {
-          // Try deep link first, fallback to smart link
-          window.location = "intent://open#Intent;scheme=com.fitnessmobileapps.bmapp5748843;package=com.fitnessmobileapps.thebayclub43285;S.browser_fallback_url=https%3A%2F%2Fl.ead.me%2FbfqDA1;end";
+          // Try deep link first, fallback to Play Store
+          window.location = "intent://open#Intent;scheme=com.fitnessmobileapps.bmapp5748843;package=com.fitnessmobileapps.thebayclub43285;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.fitnessmobileapps.thebayclub43285;end";
 
         } else {
-          // Desktop: link to smart link
+          // Desktop: link to instruction page
           window.location = "https://l.ead.me/bfqDA1";
         }
       }
