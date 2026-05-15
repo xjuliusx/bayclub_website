@@ -1255,6 +1255,61 @@ a { color: inherit; text-decoration: none; }
   max-width: 62rem;
 }
 
+.contact-table {
+  margin-top: 1rem;
+  border-collapse: collapse;
+  width: 100%;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contact-table-row {
+  display: grid;
+  grid-template-columns: 12rem minmax(8rem, 1fr);
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(248, 249, 250, 0.9);
+  align-items: center;
+}
+
+.contact-table-row:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.contact-table-term {
+  font-weight: 700;
+  color: #0e4a87;
+}
+
+.contact-table-desc {
+  color: var(--muted);
+  justify-self: end;
+  text-align: right;
+}
+
+.contact-table-desc a {
+  color: #0b4f86;
+  text-decoration: none;
+}
+
+.contact-table-desc a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .contact-table-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 0.9rem 0.9rem;
+  }
+
+  .contact-table-desc {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
 .amenities-page .section.section--tight.no-gap {
   padding-top: 0.8rem;
 }
