@@ -1282,6 +1282,22 @@ a { color: inherit; text-decoration: none; }
   color: #0e4a87;
 }
 
+.contact-note {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-left: 0.25rem;
+}
+
+/* Keep Gatehouse term + note on a single line when space allows */
+.gatehouse-row .contact-table-term {
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .gatehouse-row .contact-table-term { white-space: normal; }
+}
+
 .contact-table-desc {
   color: var(--muted);
   justify-self: end;
