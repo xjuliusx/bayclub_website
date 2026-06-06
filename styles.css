@@ -687,6 +687,25 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 30px rgba(3, 5, 15, 0.9);
 }
 
+.card--schedule {
+  background: linear-gradient(180deg, rgba(240, 247, 255, 0.96), #ffffff 100%);
+  border-color: rgba(52, 102, 160, 0.12);
+}
+
+.card--schedule h3 {
+  margin: 1.3rem 0 0.65rem;
+  font-size: 1rem;
+  color: #1d4f89;
+}
+
+.card--schedule .feature-list {
+  margin-top: 0.5rem;
+}
+
+.card--schedule .feature-list li {
+  margin-bottom: 0.55rem;
+}
+
 /* Card image header */
 .card__image {
   width: 100%;
